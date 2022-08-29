@@ -146,7 +146,16 @@ public class Picture extends SimplePicture
 */    
    public void keepOnlyRed()
    {
-      //**COMPLETE THE METHOD HERE***
+      Pixel[][] pixels = this.getPixels2D();
+      for(int row = 0; row< pixels.length; row++)
+      {
+         for(int col = 0; col<pixels[row].length; col++)
+         {
+            Pixel pixelObj = pixels[row][col];
+            pixelObj.setBlue(0);
+            pixelObj.setGreen(0);
+         }
+      }
    } 
   
 /** 
@@ -154,7 +163,16 @@ public class Picture extends SimplePicture
 */    
    public void keepOnlyGreen()
    {
-      //**COMPLETE THE METHOD HERE***
+      Pixel[][] pixels = this.getPixels2D();
+      for(int row = 0; row< pixels.length; row++)
+      {
+         for(int col = 0; col<pixels[row].length; col++)
+         {
+            Pixel pixelObj = pixels[row][col];
+            pixelObj.setBlue(0);
+            pixelObj.setRed(0);
+         }
+      }
    }  
 
 /** 
@@ -162,7 +180,16 @@ public class Picture extends SimplePicture
 */       
    public void keepOnlyBlue()
    {
-      //**COMPLETE THE METHOD HERE***
+      Pixel[][] pixels = this.getPixels2D();
+      for(int row = 0; row< pixels.length; row++)
+      {
+         for(int col = 0; col<pixels[row].length; col++)
+         {
+            Pixel pixelObj = pixels[row][col];
+            pixelObj.setGreen(0);
+            pixelObj.setRed(0);
+         }
+      }
    }  
    
 /** 
@@ -173,7 +200,16 @@ public class Picture extends SimplePicture
  */  
    public void modifyRed(int x)
    {
-      //**COMPLETE THE METHOD HERE***
+      int dec = x / 100;
+      Pixel[][] pixels = this.getPixels2D();
+      for(int row = 0; row< pixels.length; row++)
+      {
+         for(int col = 0; col<pixels[row].length; col++)
+         {
+            Pixel pixelObj = pixels[row][col];
+            pixelObj.setRed(pixelObj.getRed() * dec);
+         }
+      }
    }
    
 /** 
