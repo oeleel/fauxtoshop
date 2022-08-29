@@ -104,7 +104,7 @@ public class Picture extends SimplePicture
          for(int col = 0; col<pixels[row].length; col++)
          {
             Pixel pixelObj = pixels[row][col];
-            //**COMPLETE THE METHOD HERE***
+            pixelObj.setRed(0);
          }
       }
    }
@@ -114,7 +114,15 @@ public class Picture extends SimplePicture
  */   
    public void zeroGreen()
    {
-      //**COMPLETE THE METHOD HERE***
+      Pixel[][] pixels = this.getPixels2D();
+      for(int row = 0; row< pixels.length; row++)
+      {
+         for(int col = 0; col<pixels[row].length; col++)
+         {
+            Pixel pixelObj = pixels[row][col];
+            pixelObj.setGreen(0);
+         }
+      }
    }	
    
 /** 
@@ -122,7 +130,15 @@ public class Picture extends SimplePicture
  */
    public void zeroBlue()
    {
-      //**COMPLETE THE METHOD HERE***
+      Pixel[][] pixels = this.getPixels2D();
+      for(int row = 0; row< pixels.length; row++)
+      {
+         for(int col = 0; col<pixels[row].length; col++)
+         {
+            Pixel pixelObj = pixels[row][col];
+            pixelObj.setBlue(0);
+         }
+      }
    }	
    
 /** 
