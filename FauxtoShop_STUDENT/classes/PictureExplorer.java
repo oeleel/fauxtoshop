@@ -275,6 +275,10 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
       JButton button_pixelate = new JButton("Pixelate");
       button_pixelate.addActionListener(new Listener_Pixelate());
       sub_panel.add(button_pixelate);
+      
+      JButton button_contrast = new JButton("Contrast");
+      button_zero.addActionListener(new Listener_Contrast());
+      sub_panel.add(button_contrast);
    	
       JButton button_edgeDetector = new JButton("Edge Detector");
       button_edgeDetector.addActionListener(new Listener_EdgeDetector());
@@ -1300,7 +1304,26 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
          ((Picture)picture).pixelate(blockSize);
          updatePicture();
       }
-   }   
+   }  
+   
+   private class Listener_Contrast implements ActionListener
+   {
+      public void actionPerformed(ActionEvent e)
+      {
+         tara2.addActionListener(new Listener_Contrast_TextField());
+         tara.setText("Enter Factor for Contrast: ");
+      }
+   }
+
+   private class Listener_Contrast_TextField implements ActionListener
+   {
+      public void actionPerformed (ActionEvent e)
+      {
+         int factor = Integer.parseInt(tara2.getText());
+         ((Picture)picture).contrastIncrease(factor);
+         updatePicture();
+      }
+   } 
    
    private class Listener_EdgeDetector implements ActionListener
    {

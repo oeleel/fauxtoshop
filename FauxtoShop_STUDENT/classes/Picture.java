@@ -741,6 +741,34 @@ public class Picture extends SimplePicture
       }	
    }	
      
+   public void contrastIncrease(int c) {
+      Pixel[][] pixels = this.getPixels2D();
+      for(int row = 0; row< pixels.length - 1; row++)
+      {
+         for(int col = 0; col<pixels[row].length - 1; col++)
+         {   
+            if(distance(pixels[row][col], pixels[row][col].getColor()) < 125) {
+               Pixel pixelObj = pixels[row][col];
+               pixelObj.setRed(pixelObj.getRed() * c);
+               pixelObj.setGreen(pixelObj.getGreen() * c);
+               pixelObj.setBlue(pixelObj.getBlue() * c);
+            }
+            else if(distance(pixels[row][col], pixels[row][col].getColor()) > 125 && distance(pixels[row][col], pixels[row][col].getColor()) < 255){
+               Pixel pixelObj = pixels[row][col];
+               pixelObj.setRed(pixelObj.getRed() / c);
+               pixelObj.setGreen(pixelObj.getGreen() / c);
+               pixelObj.setBlue(pixelObj.getBlue() / c);
+
+               
+
+            }     
+         }
+      }	
+      
+   }
+
+
+
  /** Hide a black and white message in the current
     * picture by changing the red to even and then
     * setting it to odd if the message pixel is black 
