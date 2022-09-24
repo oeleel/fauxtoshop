@@ -1306,21 +1306,10 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
       }
    }  
    
-   private class Listener_Contrast implements ActionListener
-   {
-      public void actionPerformed(ActionEvent e)
-      {
-         tara2.addActionListener(new Listener_Contrast_TextField());
-         tara.setText("Enter Factor for Contrast: ");
-      }
-   }
-
-   private class Listener_Contrast_TextField implements ActionListener
-   {
+   private class Listener_Contrast implements ActionListener   {
       public void actionPerformed (ActionEvent e)
       {
-         int factor = Integer.parseInt(tara2.getText());
-         ((Picture)picture).contrastIncrease(factor);
+         ((Picture)picture).contrast();
          updatePicture();
       }
    } 

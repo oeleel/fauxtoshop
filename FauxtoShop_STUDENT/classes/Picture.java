@@ -741,25 +741,31 @@ public class Picture extends SimplePicture
       }	
    }	
      
-   public void contrastIncrease(int c) {
+   public void contrast() {
       Pixel[][] pixels = this.getPixels2D();
-      for(int row = 0; row< pixels.length - 1; row++)
+      for(int row = 0; row< pixels.length; row++)
       {
-         for(int col = 0; col<pixels[row].length - 1; col++)
+         for(int col = 0; col<pixels[row].length; col++)
          {   
             if(distance(pixels[row][col], pixels[row][col].getColor()) < 125) {
                Pixel pixelObj = pixels[row][col];
-               pixelObj.setRed(pixelObj.getRed() * c);
-               pixelObj.setGreen(pixelObj.getGreen() * c);
-               pixelObj.setBlue(pixelObj.getBlue() * c);
+               int contRed = pixelObj.getRed() * 2 ;
+               int contGreen = pixelObj.getGreen() * 2;
+               int contBlue = pixelObj.getBlue() * 2;
+               
+               
+               pixelObj.setRed(contRed);
+               pixelObj.setGreen(contGreen);
+               pixelObj.setBlue(contBlue);
             }
             else if(distance(pixels[row][col], pixels[row][col].getColor()) > 125 && distance(pixels[row][col], pixels[row][col].getColor()) < 255){
                Pixel pixelObj = pixels[row][col];
-               pixelObj.setRed(pixelObj.getRed() / c);
-               pixelObj.setGreen(pixelObj.getGreen() / c);
-               pixelObj.setBlue(pixelObj.getBlue() / c);
-
-               
+               int contRed = pixelObj.getRed() / 2;
+               int contGreen = pixelObj.getGreen() / 2;
+               int contBlue = pixelObj.getBlue() / 2;
+               pixelObj.setRed(contRed);
+               pixelObj.setGreen(contGreen);
+               pixelObj.setBlue(contBlue);
 
             }     
          }
