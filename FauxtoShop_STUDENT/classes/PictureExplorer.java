@@ -277,7 +277,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
       sub_panel.add(button_pixelate);
       
       JButton button_contrast = new JButton("Contrast");
-      button_zero.addActionListener(new Listener_Contrast());
+      button_contrast.addActionListener(new Listener_Contrast());
       sub_panel.add(button_contrast);
    	
       JButton button_edgeDetector = new JButton("Edge Detector");
